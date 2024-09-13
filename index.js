@@ -5,8 +5,8 @@ const app = express();
 const PORT = 7002;
 
 app.use(express.json());
-app.use('api/v1/user',route);
-app.use('*',(req,res)=>res.send("Not Path "))
+app.use('/api/v1/user',route);
+ app.all('*',(req,res)=>res.send("Not Path "))
 
 app.listen(PORT, (err) => {
   if (err) console.log("Not Connetced");
